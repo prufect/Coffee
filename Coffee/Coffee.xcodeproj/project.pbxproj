@@ -59,9 +59,7 @@
 				A47C6F8F230EF2F10070F82F /* AppDelegate.swift */,
 				A47C6F91230EF2F10070F82F /* SceneDelegate.swift */,
 				A47C6F93230EF2F10070F82F /* ContentView.swift */,
-				A47C6F95230EF2F20070F82F /* Assets.xcassets */,
-				A47C6F9A230EF2F20070F82F /* LaunchScreen.storyboard */,
-				A47C6F9D230EF2F20070F82F /* Info.plist */,
+				A47C6FA3230EF5A00070F82F /* Resources */,
 				A47C6F97230EF2F20070F82F /* Preview Content */,
 			);
 			path = Coffee;
@@ -73,6 +71,16 @@
 				A47C6F98230EF2F20070F82F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A47C6FA3230EF5A00070F82F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A47C6F95230EF2F20070F82F /* Assets.xcassets */,
+				A47C6F9A230EF2F20070F82F /* LaunchScreen.storyboard */,
+				A47C6F9D230EF2F20070F82F /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +296,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Coffee/Preview Content\"";
 				DEVELOPMENT_TEAM = 4479HNAQMJ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Coffee/Info.plist;
+				INFOPLIST_FILE = Coffee/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +316,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Coffee/Preview Content\"";
 				DEVELOPMENT_TEAM = 4479HNAQMJ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Coffee/Info.plist;
+				INFOPLIST_FILE = Coffee/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
