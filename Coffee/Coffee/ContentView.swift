@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var show = false
+    @State var viewState = CGSize.zero
     
     var body: some View {
         ZStack {
@@ -28,6 +29,7 @@ struct ContentView: View {
                 .shadow(radius: 10)
                 .offset(x: 0, y: show ? -400 : -40)
                 .scaleEffect(0.85)
+                .offset(x: viewState.width, y: viewState.height)
                 .animation(.easeInOut(duration: 0.7))
                 .rotationEffect(Angle(degrees: show ? 15 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 40 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
@@ -38,18 +40,30 @@ struct ContentView: View {
                 .shadow(radius: 10)
                 .offset(x: 0, y: show ? -175 : -20)
                 .scaleEffect(0.9)
+                .offset(x: viewState.width, y: viewState.height)
                 .animation(.easeInOut(duration: 0.5))
                 .rotationEffect(Angle(degrees: show ? 10 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 30: 0), axis: (x: 10.0, y: 10.0, z: 10.0))
             
             RewardsCardView()
+                .offset(x: viewState.width, y: viewState.height)
                 .rotationEffect(Angle(degrees: show ? 5 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 20 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .animation(.spring(response: 1.0, dampingFraction: 0.5, blendDuration: 0.35))
                 .onTapGesture {
                     self.show.toggle()
                 }
-            
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            self.viewState = value.translation
+                            self.show = true
+                    }
+                    .onEnded { value in
+                        self.viewState = .zero
+                        self.show = false
+                    }
+                )
         }
     }
 }
