@@ -25,6 +25,7 @@
 		A47C6FC4230F67090070F82F /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C6FC3230F67090070F82F /* Items.swift */; };
 		A47C6FC6230F71B60070F82F /* Double+Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C6FC5230F71B60070F82F /* Double+Money.swift */; };
 		A47C6FC8230F78A00070F82F /* MenuStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C6FC7230F78A00070F82F /* MenuStore.swift */; };
+		A4C550DD230F86A200D324E3 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C550DC230F86A200D324E3 /* TabbedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A47C6FC3230F67090070F82F /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		A47C6FC5230F71B60070F82F /* Double+Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Money.swift"; sourceTree = "<group>"; };
 		A47C6FC7230F78A00070F82F /* MenuStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStore.swift; sourceTree = "<group>"; };
+		A4C550DC230F86A200D324E3 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				A47C6F8F230EF2F10070F82F /* AppDelegate.swift */,
 				A47C6F91230EF2F10070F82F /* SceneDelegate.swift */,
+				A4C550DC230F86A200D324E3 /* TabbedView.swift */,
 				A47C6FB4230F629C0070F82F /* Views */,
 				A47C6FB3230F62890070F82F /* Models */,
 				A47C6FB2230F62800070F82F /* Data */,
@@ -270,6 +273,7 @@
 				A47C6FBC230F64180070F82F /* MenuView.swift in Sources */,
 				A47C6FC4230F67090070F82F /* Items.swift in Sources */,
 				A47C6FC6230F71B60070F82F /* Double+Money.swift in Sources */,
+				A4C550DD230F86A200D324E3 /* TabbedView.swift in Sources */,
 				A47C6FC2230F652D0070F82F /* Item.swift in Sources */,
 				A47C6FB1230F5A240070F82F /* MenuCategoryCard.swift in Sources */,
 				A47C6FC8230F78A00070F82F /* MenuStore.swift in Sources */,

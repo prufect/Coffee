@@ -16,7 +16,7 @@ struct ProfileView: View {
     var body: some View {
         ZStack {
             
-            BlurView(style: .extraLight)
+            BlurView(style: .systemMaterial)
             
             TitleView()
                 .padding(.top)
@@ -148,7 +148,7 @@ struct CardBottomView: View {
         .frame(minWidth: 0, maxWidth: .infinity)
         .padding()
         .padding(.horizontal)
-        .background(Color.white)
+        .background(BlurView(style: .systemMaterial))
         .cornerRadius(30)
         .shadow(radius: 30)
         .offset(y: 600)
