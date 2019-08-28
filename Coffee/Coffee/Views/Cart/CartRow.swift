@@ -18,7 +18,7 @@ struct CartRow: View {
     }
     
     var body: some View {
-        HStack(spacing: 24) {
+        HStack(spacing: 16) {
             Image(item.menuItem.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -26,20 +26,24 @@ struct CartRow: View {
                 .background(Color("background3"))
                 .cornerRadius(20)
             
-            Text(item.menuItem.name)
-                .font(.headline)
-                .fontWeight(.bold)
+            VStack(alignment: .leading, spacing: 8) {
+                Text(item.menuItem.name)
+                    .font(.headline)
+                    .fontWeight(.heavy)
+                    .lineLimit(1)
+                    .fixedSize()
+                
+                CustomStepper(value: $item.quantity)
+            }
             
             Spacer()
             
-            CustomStepper(value: $item.quantity)
-            
             Text(totalPrice())
-                .font(.headline)
-                .fontWeight(.semibold)
-                .foregroundColor(Color.black.opacity(0.3))
-            
-            
+                .font(.title)
+                .fontWeight(.heavy)
+                .foregroundColor(Color.black.opacity(0.2))
+                .multilineTextAlignment(.trailing)
+                .frame(width: 72)
         }
         .padding(.horizontal, 32)
     }

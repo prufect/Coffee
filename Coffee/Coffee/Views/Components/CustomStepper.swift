@@ -41,7 +41,7 @@ struct CustomStepper: View {
                 .font(Font.footnote.weight(.heavy))
                 .fontWeight(.black)
                 .multilineTextAlignment(.center)
-                .frame(width: 16)
+                .frame(width: 20)
             
             Button(action: { self.increment() }) {
                 Image(systemName: "plus")
