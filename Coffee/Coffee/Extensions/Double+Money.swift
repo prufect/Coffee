@@ -10,6 +10,6 @@ import Foundation
 
 extension Double {
     func money() -> String {
-        return "$\(String(self))"
+        return "$\(String(Int(self)))"
     }
 }

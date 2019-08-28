@@ -40,6 +40,6 @@ struct MenuItemView: View {
 
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemView(item: DataStore().menuItems[0])
+        MenuItemView(item: menuItems[0])
     }
 }

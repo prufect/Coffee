@@ -12,9 +12,9 @@ struct MenuMultiList: View {
     var body: some View {
         ScrollView {
             VStack {
-                MenuList(menuItems: DataStore().coldDrinks)
-                MenuList(menuItems: DataStore().coldDrinks)
-                MenuList(menuItems: DataStore().coldDrinks)
+                MenuList(menuItems: coldDrinks)
+                MenuList(menuItems: coldDrinks)
+                MenuList(menuItems: coldDrinks)
             }
         }
         .padding(.top, 210)

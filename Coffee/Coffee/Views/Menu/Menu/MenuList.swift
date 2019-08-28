@@ -32,6 +32,6 @@ struct MenuList: View {
 
 struct MenuList_Previews: PreviewProvider {
     static var previews: some View {
-        MenuList(menuItems: DataStore().coldDrinks)
+        MenuList(menuItems: coldDrinks)
     }
 }
