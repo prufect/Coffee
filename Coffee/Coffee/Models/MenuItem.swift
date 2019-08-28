@@ -8,21 +8,21 @@
 
 import Foundation
 
-enum DrinkType {
+enum MenuItemDrinkType {
     case hot
     case cold
 }
 
-enum ItemType {
-    case drink(_ type: DrinkType)
+enum MenuItemType {
+    case drink(_ type: MenuItemDrinkType)
     case food
 }
 
-struct Item: Identifiable {
+struct MenuItem: Identifiable {
     var id = UUID()
     var name: String
     var description: String
     var image: String
     var price: Double
-    var type: ItemType
+    var type: MenuItemType
 }

@@ -15,12 +15,3 @@ struct MenuCategory : Identifiable {
     var color: Color
     var shadowColor: Color
 }
-
-
-struct Update: Identifiable {
-    var id = UUID()
-    var image: String
-    var title: String
-    var text: String
-    var date: String
-}

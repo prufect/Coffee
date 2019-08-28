@@ -13,21 +13,21 @@ struct SideMenu: View {
     @Binding var showMenu: Bool
     
     var menuItems = [
-        MenuItem(image: "person.crop.circle", text: "My Account"),
-        MenuItem(image: "creditcard", text: "Billing"),
-        MenuItem(image: "clock", text: "Recent"),
-        MenuItem(image: "arrow.uturn.down", text: "Sign out")
+        SideMenuItem(image: "person.crop.circle", text: "My Account"),
+        SideMenuItem(image: "creditcard", text: "Billing"),
+        SideMenuItem(image: "clock", text: "Recent"),
+        SideMenuItem(image: "arrow.uturn.down", text: "Sign out")
     ]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            ForEach(menuItems) { MenuRow(item: $0) }
+            ForEach(menuItems) { SideMenuRow(item: $0) }
             Spacer()
         }
         .padding(.top, 20)
         .padding(30)
         .frame(minWidth: 0, maxWidth: .infinity)
-        .background(BlurView(style: .systemMaterial))
+        .background(Color.white)
         .cornerRadius(30)
         .padding(.trailing, 60)
         .shadow(radius: 30)
@@ -40,8 +40,8 @@ struct SideMenu: View {
     }
 }
 
-//struct SideMenu_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SideMenu()
-//    }
-//}
+struct SideMenu_Previews: PreviewProvider {
+    static var previews: some View {
+        SideMenu(showMenu: .constant(true))
+    }
+}

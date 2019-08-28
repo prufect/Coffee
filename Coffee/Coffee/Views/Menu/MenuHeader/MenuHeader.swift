@@ -11,28 +11,29 @@ import SwiftUI
 struct MenuHeader: View {
     
     @Binding var showMenu: Bool
-    @Binding var showProfile: Bool
+    @Binding var showRewards: Bool
+    @Binding var showCart: Bool
     
     var body: some View {
         HStack {
-            MenuButton(show: $showMenu)
+            SideMenuButton(show: $showMenu)
             .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.35))
-            .offset(x: -30, y: showProfile ? 0 : 80)
+            .offset(x: -30, y: showRewards ? 0 : 80)
             
             MenuTitle()
             .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.35))
-                .offset(x: -30, y: showProfile ? 90 : 80)
-            .scaleEffect(showProfile ? 0.9 : 1.0)
+                .offset(x: -30, y: showRewards ? 90 : 80)
+            .scaleEffect(showRewards ? 0.9 : 1.0)
             
-            MenuRight(show: $showProfile)
+            MenuOptions(showRewards: $showRewards, showCart: $showCart)
             .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.35))
-            .offset(x: -16, y: showProfile ? 0 : 88)
+            .offset(x: -16, y: showRewards ? 0 : 88)
         }
     }
 }
 
 struct MenuHeader_Previews: PreviewProvider {
     static var previews: some View {
-        MenuHeader(showMenu: .constant(false), showProfile: .constant(false))
+        MenuHeader(showMenu: .constant(false), showRewards: .constant(false), showCart: .constant(false))
     }
 }
