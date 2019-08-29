@@ -37,6 +37,7 @@ struct CartRow: View {
             }
             
             Spacer()
+                .padding(-16)
             
             Text(totalPrice())
                 .font(.title)
@@ -46,6 +47,7 @@ struct CartRow: View {
                 .frame(width: 72)
         }
         .padding(.horizontal, 32)
+        .padding(.vertical, 16)
     }
 }
 

@@ -32,6 +32,7 @@
 		A47C6FC2230F652D0070F82F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C6FC1230F652D0070F82F /* MenuItem.swift */; };
 		A47C6FC6230F71B60070F82F /* Double+Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C6FC5230F71B60070F82F /* Double+Money.swift */; };
 		A4A0622023161C9C0050D6DF /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0621F23161C9C0050D6DF /* CustomStepper.swift */; };
+		A4A062222316DAA00050D6DF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A062212316DAA00050D6DF /* RootView.swift */; };
 		A4EDD8DE23103AE00088F78A /* RewardsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDD8DD23103AE00088F78A /* RewardsCardView.swift */; };
 		A4EDD8E023103B6C0088F78A /* RewardsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDD8DF23103B6C0088F78A /* RewardsTitleView.swift */; };
 		A4EDD8E5231041E20088F78A /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDD8E4231041E20088F78A /* SideMenu.swift */; };
@@ -67,6 +68,7 @@
 		A47C6FC1230F652D0070F82F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		A47C6FC5230F71B60070F82F /* Double+Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Money.swift"; sourceTree = "<group>"; };
 		A4A0621F23161C9C0050D6DF /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
+		A4A062212316DAA00050D6DF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A4EDD8DD23103AE00088F78A /* RewardsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCardView.swift; sourceTree = "<group>"; };
 		A4EDD8DF23103B6C0088F78A /* RewardsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTitleView.swift; sourceTree = "<group>"; };
 		A4EDD8E4231041E20088F78A /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				A47C6F8F230EF2F10070F82F /* AppDelegate.swift */,
 				A47C6F91230EF2F10070F82F /* SceneDelegate.swift */,
+				A4A062212316DAA00050D6DF /* RootView.swift */,
 				A47C6FB4230F629C0070F82F /* Views */,
 				A47C6FB3230F62890070F82F /* Models */,
 				A47C6FB2230F62800070F82F /* Data */,
@@ -318,6 +321,7 @@
 				A437B8072316124700D65140 /* SideMenuButton.swift in Sources */,
 				A47C6F90230EF2F10070F82F /* AppDelegate.swift in Sources */,
 				A437B815231616E200D65140 /* CartList.swift in Sources */,
+				A4A062222316DAA00050D6DF /* RootView.swift in Sources */,
 				A4EDD8DE23103AE00088F78A /* RewardsCardView.swift in Sources */,
 				A47C6FAD230F59A10070F82F /* DataStore.swift in Sources */,
 				A437B80B231612AF00D65140 /* MenuOptions.swift in Sources */,

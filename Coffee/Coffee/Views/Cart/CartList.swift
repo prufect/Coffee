@@ -13,8 +13,10 @@ struct CartList: View {
     var items: [CartItem] = cartItems
     
     var body: some View {
-        List(items) { item in
-            CartRow(item: item)
+        ScrollView {
+            ForEach(items) { item in
+                CartRow(item: item)
+            }
         }
     }
 }

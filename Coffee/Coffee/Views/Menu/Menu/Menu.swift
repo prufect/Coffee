@@ -11,7 +11,7 @@ import SwiftUI
 struct Menu: View {
 
     @State private var showMenu = false
-    @State private var showProfile = false
+    @State private var showRewards = false
     @State private var showCart = false
     
     @State var offsetY: CGFloat = 0.0
@@ -24,7 +24,7 @@ struct Menu: View {
             }
             
             VStack {
-                MenuHeader(showMenu: $showMenu, showRewards: $showProfile, showCart: $showCart)
+                MenuHeader(showMenu: $showMenu, showRewards: $showRewards, showCart: $showCart)
                     .offset(y: offsetY)
                 Spacer()
             }
@@ -33,7 +33,13 @@ struct Menu: View {
                 .cornerRadius(30.0)
                 .shadow(radius: 20)
                 .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.35))
-                .offset(x: 0, y: showProfile ? 80 : UIScreen.main.bounds.height)
+                .offset(x: 0, y: showRewards ? 80 : UIScreen.main.bounds.height)
+            
+            Cart()
+                .cornerRadius(30.0)
+                .shadow(radius: 20)
+                .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.35))
+                .offset(x: 0, y: showCart ? 80 : UIScreen.main.bounds.height)
             
             SideMenu(showMenu: $showMenu)
         }

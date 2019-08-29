@@ -9,20 +9,18 @@
 import SwiftUI
 
 struct MenuList: View {
-        
+    
     let menuItems: [MenuItem]!
     
     var body: some View {
-        VStack {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 30) {
-                    ForEach(menuItems) { item in
-                        Button(action: {
-                            // To Be Implemented
-                        }) {
-                            MenuItemView(item: item)
-                                .offset(x: 30)
-                        }
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 30) {
+                ForEach(menuItems) { item in
+                    Button(action: {
+                        // To Be Implemented
+                    }) {
+                        MenuItemView(item: item)
+                            .offset(x: 30)
                     }
                 }
             }
