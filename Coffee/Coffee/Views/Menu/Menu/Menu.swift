@@ -14,18 +14,19 @@ struct Menu: View {
     @State private var showRewards = false
     @State private var showCart = false
     
-    @State var offsetY: CGFloat = 0.0
+    private func animate() -> Bool {
+        return showRewards || showCart
+    }
     
     var body: some View {
         ZStack {
-            GeometryReader { geometry in
-                MenuMultiList()
-                    .offset(x: 0)
-            }
+            MenuMultiList()
+                .offset(x: 0, y: self.animate() ? 80 : 0)
+                .scaleEffect(self.animate() ? 0.9 : 1.0)
+                .animation(.spring())
             
             VStack {
                 MenuHeader(showMenu: $showMenu, showRewards: $showRewards, showCart: $showCart)
-                    .offset(y: offsetY)
                 Spacer()
             }
             

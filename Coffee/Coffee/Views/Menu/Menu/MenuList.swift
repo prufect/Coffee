@@ -17,7 +17,7 @@ struct MenuList: View {
             HStack(spacing: 30) {
                 ForEach(menuItems) { item in
                     Button(action: {
-                        // To Be Implemented
+                        cartItems.append(CartItem(menuItem: item, quantity: 1))
                     }) {
                         MenuItemView(item: item)
                             .offset(x: 30)
