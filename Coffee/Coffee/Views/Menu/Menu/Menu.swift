@@ -22,13 +22,12 @@ struct Menu: View {
     
     var body: some View {
         ZStack {
-            
             VStack {
-                Text("Test")
+                Text(("\(self.itemSource.origin.x), \(self.itemSource.origin.y), \(self.itemSource.size.width), \(self.itemSource.size.height)"))
                 Spacer()
             }
             
-            MenuMultiList()
+            MenuMultiList(source: $itemSource)
                 .offset(x: 0, y: self.shouldAnimate() ? 80 : 0)
                 .scaleEffect(self.shouldAnimate() ? 0.9 : 1.0)
                 .animation(.spring())
@@ -51,6 +50,10 @@ struct Menu: View {
                 .offset(x: 0, y: showCart ? 80 : UIScreen.main.bounds.height)
             
             SideMenu(showMenu: $showMenu)
+            
+            if itemSource != .zero {
+                FullScreenItemView(item: menuItems.first, source: itemSource)
+            }
         }
     }
 }

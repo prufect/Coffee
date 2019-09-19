@@ -11,6 +11,7 @@ import SwiftUI
 struct MenuList: View {
     
     let menuItems: [MenuItem]!
+    @Binding var source: CGRect
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -19,7 +20,7 @@ struct MenuList: View {
                     Button(action: {
                         cartItems.append(CartItem(menuItem: item, quantity: 1))
                     }) {
-                        MenuItemView(item: item)
+                        MenuItemView(item: item, source: self.$source)
                             .offset(x: 30)
                     }
                 }
@@ -30,6 +31,6 @@ struct MenuList: View {
 
 struct MenuList_Previews: PreviewProvider {
     static var previews: some View {
-        MenuList(menuItems: coldDrinks)
+        MenuList(menuItems: coldDrinks, source: .constant(.zero))
     }
 }

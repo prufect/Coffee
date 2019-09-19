@@ -9,12 +9,15 @@
 import SwiftUI
 
 struct MenuMultiList: View {
+    
+    @Binding var source: CGRect
+
     var body: some View {
         ScrollView {
             VStack {
-                MenuList(menuItems: coldDrinks)
-                MenuList(menuItems: coldDrinks)
-                MenuList(menuItems: coldDrinks)
+                MenuList(menuItems: coldDrinks, source: self.$source)
+                MenuList(menuItems: coldDrinks, source: self.$source)
+                MenuList(menuItems: coldDrinks, source: self.$source)
             }
         }
         .padding(.top, 210)
@@ -23,6 +26,6 @@ struct MenuMultiList: View {
 
 struct MenuMultiList_Previews: PreviewProvider {
     static var previews: some View {
-        MenuMultiList()
+        MenuMultiList(source: .constant(.zero))
     }
 }
