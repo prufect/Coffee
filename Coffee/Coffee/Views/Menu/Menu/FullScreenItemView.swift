@@ -37,7 +37,6 @@ struct FullScreenItemView: View {
                     .foregroundColor(.white)
                     .padding(30)
                     .lineLimit(1)
-                Spacer()
                 Image(self.item.image)
                     .renderingMode(.original)
                     .resizable()
