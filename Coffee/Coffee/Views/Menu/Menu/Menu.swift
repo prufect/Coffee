@@ -14,12 +14,20 @@ struct Menu: View {
     @State private var showRewards = false
     @State private var showCart = false
     
+    @State private var itemSource: CGRect = .zero
+    
     private func shouldAnimate() -> Bool {
         return showRewards || showCart
     }
     
     var body: some View {
         ZStack {
+            
+            VStack {
+                Text("Test")
+                Spacer()
+            }
+            
             MenuMultiList()
                 .offset(x: 0, y: self.shouldAnimate() ? 80 : 0)
                 .scaleEffect(self.shouldAnimate() ? 0.9 : 1.0)

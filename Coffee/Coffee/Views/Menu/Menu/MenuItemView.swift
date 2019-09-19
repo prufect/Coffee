@@ -13,38 +13,44 @@ struct MenuItemView: View {
     var item: MenuItem!
     
     var body: some View {
-        ZStack {
-            VStack(alignment: .leading) {
-                Text(item.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(30)
-                    .lineLimit(4)
-                    .padding(.trailing, 50)
-                Spacer()
-                Image(item.image)
-                    .renderingMode(.original)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 246, height: 150)
-                    .padding(.bottom, 30)
+        GeometryReader { geometry in
+           ZStack {
+                VStack(alignment: .leading) {
+                    Text(self.item.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(30)
+                        .lineLimit(4)
+                        .padding(.trailing, 50)
+                    Spacer()
+                    Image(self.item.image)
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 246, height: 150)
+                        .padding(.bottom, 30)
+                }
+                .background(Color("background3"))
+                .cornerRadius(30)
+                .shadow(color: Color("backgroundShadow3"), radius: 10, x: 0, y: 5)
+                .animation(.default)
+                .onTapGesture {
+                    print("\(geometry.frame(in: .global).origin.x), \(geometry.frame(in: .global).origin.y), \(geometry.frame(in: .global).size.width), \(geometry.frame(in: .global).size.height)")
             }
-            .frame(width: 250, height: 250)
-            .background(Color("background3"))
-            .cornerRadius(30)
-            .shadow(color: Color("backgroundShadow3"), radius: 20, x: 0, y: 10)
-            .padding(.bottom, 50)
-            .animation(.default)
-            
-            Image(systemName: "cart.badge.plus")
-                .frame(width: 44, height: 44)
-                .foregroundColor(Color.white)
-                .background(Color.yellow)
-                .cornerRadius(22)
-                .shadow(radius: 11)
-            .offset(x: 90, y: 60)
+                
+                Image(systemName: "cart.badge.plus")
+                    .frame(width: 44, height: 44)
+                    .foregroundColor(Color.white)
+                    .background(Color.yellow)
+                    .cornerRadius(22)
+                    .shadow(radius: 11)
+                .offset(x: 90, y: 60)
+            }
         }
+        .frame(width: 250, height: 250)
+        .padding(.top, 20)
+        .padding(.bottom, 50)
     }
 }
 
