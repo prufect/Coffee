@@ -12,6 +12,7 @@ struct FullScreenItemView: View {
     
     var item: MenuItem!
     @Binding var source: CGRect
+    @Binding var selected: Bool
     @State var showFullscreen = false
     
     private func getPos() -> CGPoint {
@@ -60,7 +61,10 @@ struct FullScreenItemView: View {
                         .cornerRadius(22)
                         .shadow(radius: 11)
                         .onTapGesture {
-                            self.source = .zero
+                            self.showFullscreen = false
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                                self.selected = false
+                            }
                     }
                 }
             }
@@ -82,6 +86,6 @@ struct FullScreenItemView: View {
 
 struct FullScreenItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FullScreenItemView(item: menuItems.first, source: .constant(.init(x: 0, y: 0, width: 250, height: 250)))
+        FullScreenItemView(item: menuItems.first, source: .constant(.init(x: 0, y: 0, width: 250, height: 250)), selected: .constant(false))
     }
 }

@@ -12,6 +12,7 @@ struct MenuItemView: View {
     
     var item: MenuItem!
     @Binding var source: CGRect
+    @Binding var selected: Bool
     
     var body: some View {
         GeometryReader { geometry in
@@ -41,6 +42,7 @@ struct MenuItemView: View {
                         width: geometry.frame(in: .global).size.width,
                         height: geometry.frame(in: .global).size.height
                     )
+                    self.selected = true
                 }
                 
                 VStack {
@@ -65,6 +67,6 @@ struct MenuItemView: View {
 
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemView(item: menuItems[0], source: .constant(.zero))
+        MenuItemView(item: menuItems[0], source: .constant(.zero), selected: .constant(false))
     }
 }

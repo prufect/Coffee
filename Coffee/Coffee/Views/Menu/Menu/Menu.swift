@@ -15,19 +15,15 @@ struct Menu: View {
     @State private var showCart = false
     
     @State private var itemSource: CGRect = .zero
-    
+    @State private var itemIsSelected: Bool = false
+
     private func shouldAnimate() -> Bool {
         return showRewards || showCart
     }
     
     var body: some View {
         ZStack {
-            VStack {
-                Text(("\(self.itemSource.origin.x), \(self.itemSource.origin.y), \(self.itemSource.size.width), \(self.itemSource.size.height)"))
-                Spacer()
-            }
-            
-            MenuMultiList(source: $itemSource)
+            MenuMultiList(source: $itemSource, selected: $itemIsSelected)
                 .offset(x: 0, y: self.shouldAnimate() ? 80 : 0)
                 .scaleEffect(self.shouldAnimate() ? 0.9 : 1.0)
                 .animation(.spring())
@@ -51,9 +47,8 @@ struct Menu: View {
             
             SideMenu(showMenu: $showMenu)
             
-            if itemSource != .zero {
-                FullScreenItemView(item: menuItems.first, source: $itemSource)
-                    //.offset(x: 12, y: 0)
+            if itemIsSelected {
+                FullScreenItemView(item: menuItems.first, source: $itemSource, selected: $itemIsSelected)
             }
         }
     }
