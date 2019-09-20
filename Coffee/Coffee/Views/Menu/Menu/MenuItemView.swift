@@ -53,9 +53,9 @@ struct MenuItemView: View {
                             .background(Color.yellow)
                             .cornerRadius(22)
                             .shadow(radius: 11)
+                            .padding()
                     }
                 }
-                .padding()
             }
         }
         .frame(width: 250, height: 250)

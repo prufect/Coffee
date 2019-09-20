@@ -52,7 +52,8 @@ struct Menu: View {
             SideMenu(showMenu: $showMenu)
             
             if itemSource != .zero {
-                FullScreenItemView(item: menuItems.first, source: itemSource)
+                FullScreenItemView(item: menuItems.first, source: $itemSource)
+                    //.offset(x: 12, y: 0)
             }
         }
     }

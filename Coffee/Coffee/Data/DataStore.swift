@@ -10,7 +10,7 @@ import SwiftUI
 
 var menuItems: [MenuItem] = [
     
-    MenuItem(name: "Drink Drink Drink",
+    MenuItem(name: "Coffee",
              description: "Just the greatest think you will ever put into your mouth",
              image: "Illustration1",
              price: 9,

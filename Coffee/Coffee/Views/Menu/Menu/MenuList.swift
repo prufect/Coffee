@@ -21,9 +21,12 @@ struct MenuList: View {
                         cartItems.append(CartItem(menuItem: item, quantity: 1))
                     }) {
                         MenuItemView(item: item, source: self.$source)
-                            .offset(x: 30)
+                        .offset(x: 30)
                     }
                 }
+                
+                Spacer()
+                .frame(width: 30)
             }
         }
     }

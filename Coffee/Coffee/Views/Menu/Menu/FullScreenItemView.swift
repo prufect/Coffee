@@ -11,12 +11,16 @@ import SwiftUI
 struct FullScreenItemView: View {
     
     var item: MenuItem!
-    var source: CGRect!
+    @Binding var source: CGRect
     @State var showFullscreen = false
     
     private func getPos() -> CGPoint {
-        let x = showFullscreen ? 0 + source.size.width/2 : source.origin.x + source.size.width/2
-        let y = showFullscreen ? 0 + source.size.width/2 : source.origin.y + source.size.width/2
+        
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        
+        let x = showFullscreen ? 0 + width/2 : source.origin.x + source.size.width/2
+        let y = showFullscreen ? 0 + height/2 : source.origin.y + source.size.height/2
         return .init(x: x, y: y)
     }
     
@@ -37,15 +41,13 @@ struct FullScreenItemView: View {
                     .foregroundColor(.white)
                     .padding(30)
                     .lineLimit(1)
+                
                 Image(self.item.image)
                     .renderingMode(.original)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 246, height: 150)
             }
-            .background(Color("background6"))
-            .cornerRadius(30)
-            .animation(.default)
             
             VStack {
                 Spacer()
@@ -57,18 +59,29 @@ struct FullScreenItemView: View {
                         .background(Color.yellow)
                         .cornerRadius(22)
                         .shadow(radius: 11)
+                        .onTapGesture {
+                            self.source = .zero
+                    }
                 }
             }
             .padding()
         }
+        .background(Color("background3"))
+        .cornerRadius(30)
         .frame(width: getWidth(), height: getHeight())
         .position(getPos())
+        .animation(.default)
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.showFullscreen = true
+            }
+        }
     }
 }
 
 struct FullScreenItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FullScreenItemView(item: menuItems.first, source: .init(x: 0, y: 0, width: 250, height: 250))
+        FullScreenItemView(item: menuItems.first, source: .constant(.init(x: 0, y: 0, width: 250, height: 250)))
     }
 }
