@@ -23,6 +23,7 @@ struct MenuItem: Identifiable {
     var name: String
     var description: String
     var image: String
+    var color: String
     var price: Double
     var type: MenuItemType
 }

@@ -12,7 +12,7 @@ struct MenuList: View {
     
     let menuItems: [MenuItem]!
     @Binding var source: CGRect
-    @Binding var selected: Bool
+    @Binding var selectedItem: MenuItem?
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -21,7 +21,7 @@ struct MenuList: View {
                     Button(action: {
                         cartItems.append(CartItem(menuItem: item, quantity: 1))
                     }) {
-                        MenuItemView(item: item, source: self.$source, selected: self.$selected)
+                        MenuItemView(item: item, source: self.$source, selectedItem: self.$selectedItem)
                             .offset(x: 30)
                     }
                 }
@@ -35,6 +35,6 @@ struct MenuList: View {
 
 struct MenuList_Previews: PreviewProvider {
     static var previews: some View {
-        MenuList(menuItems: coldDrinks, source: .constant(.zero), selected: .constant(false))
+        MenuList(menuItems: coldDrinks, source: .constant(.zero), selectedItem: .constant(menuItems1[0]))
     }
 }

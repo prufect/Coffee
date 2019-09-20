@@ -12,7 +12,7 @@ struct MenuItemView: View {
     
     var item: MenuItem!
     @Binding var source: CGRect
-    @Binding var selected: Bool
+    @Binding var selectedItem: MenuItem?
     
     var body: some View {
         GeometryReader { geometry in
@@ -31,7 +31,7 @@ struct MenuItemView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 246, height: 150)
                 }
-                .background(Color("background3"))
+                .background(Color(self.item.color))
                 .cornerRadius(30)
                 .shadow(color: Color("backgroundShadow3"), radius: 10, x: 0, y: 5)
                 .animation(.default)
@@ -42,7 +42,7 @@ struct MenuItemView: View {
                         width: geometry.frame(in: .global).size.width,
                         height: geometry.frame(in: .global).size.height
                     )
-                    self.selected = true
+                    self.selectedItem = self.item
                 }
                 
                 VStack {
@@ -67,6 +67,6 @@ struct MenuItemView: View {
 
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemView(item: menuItems[0], source: .constant(.zero), selected: .constant(false))
+        MenuItemView(item: menuItems1[0], source: .constant(.zero), selectedItem: .constant(menuItems1[0]))
     }
 }
